@@ -5,9 +5,10 @@
     <script>
         const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         var n = 0;
+        var speed = 200;
         var password = new Array();
         var correct = ["p", "a", "s", "s", "w", "o", "r", "d"];
-        var t=setInterval(lett,200);
+        var t=setInterval(lett,speed);
         function lett()
         {
             if(n < 26)
@@ -24,6 +25,7 @@
         function clik()
         {  
             password.push(letters[n]);
+            speed /= 1.1;
             document.getElementById("password").innerHTML = password.join('');
         }
         function submit()
