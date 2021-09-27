@@ -1,0 +1,59 @@
+<DOCTYPE !html>
+<html>
+    <style>
+    </style>
+    <script>
+        const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+        var n = 0;
+        var password = new Array();
+        var correct = ["p", "a", "s", "s", "w", "o", "r", "d"];
+        var t=setInterval(lett,200);
+        function lett()
+        {
+            if(n < 26)
+            {
+                document.getElementById("letter").innerHTML = letters[n];
+                n++;
+            }
+            else
+            {
+                n = 0;
+                document.getElementById("letter").innerHTML = letters[n];
+            }
+        }
+        function clik()
+        {  
+            password.push(letters[n]);
+            document.getElementById("password").innerHTML = password.join('');
+        }
+        function submit()
+        {
+            if(password.join('') == correct.join(''))
+            {
+                document.getElementById("sucses").innerHTML = "login successful";
+            }
+            else
+            {
+                document.getElementById("sucses").innerHTML = "login failed, password is wrong";
+            }
+        }
+    </script>
+    
+    <body style="background-color: #222222">
+        <div style="margin-top: 10%">
+            <div style="background-color: #222222; height: 5%; width: 20%; margin-left: 20%">
+                <p style="color: #ffffff"> Please enter your password here:</p>
+            </div>
+            <div style="background-color: #888888; height: 5%; width: 25%; margin-left: 20%">
+                <p style="color: #ffffff; float: left; margin-top: 2.5%; margin-left: 5%"> <span id="password"></span> </p>
+                <p style="color: #ffffff; float: left; margin-top: 2.5%"> <span id="letter"></span> </p>
+            </div>
+            <div style="margin-top: 2.5%">
+            <button style="margin-left: 20%" onclick="clik()">select</button>
+            <button style="" onclick="submit()">submit</button>
+            </div>
+            <div style="margin-top: 2.5%; margin-left: 20%">
+            <p style="color: #ffffff"><span id="sucses"></span> </p>
+        </div>
+    </body>
+</html>
