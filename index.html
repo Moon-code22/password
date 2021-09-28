@@ -9,12 +9,17 @@
         var password = new Array();
         var correct = ["p", "a", "s", "s", "w", "o", "r", "d"];
         var t=setInterval(lett,speed);
+        function randomIntFromInterval(min, max)
+        {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
         function lett()
         {
+            n = randomIntFromInterval(0, 25)
             if(n < 26)
             {
                 document.getElementById("letter").innerHTML = letters[n];
-                n++;
             }
             else
             {
