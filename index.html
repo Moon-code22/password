@@ -26,6 +26,7 @@
         {  
             password.push(letters[n]);
             speed /= 2;
+            t = setInterval(lett,speed);
             document.getElementById("password").innerHTML = password.join('');
         }
         function submit()
